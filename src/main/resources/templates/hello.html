@@ -9,6 +9,7 @@
 </head>
 <body>
 <div layout:fragment="content"><div class="list-group">
+    <h1><p th:text = "#{dafault.title}"></p></h1>
     <a th:each="resource : ${resources}"
        th:href="${resource.url}" class="list-group-item">
         <b th:text="${resource.name}"></b>
