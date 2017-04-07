@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css" />
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Spring Boot</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Spring Boot Web Thymeleaf Example</h1>
+        <h2>
+            <span th:text="'Message: ' + ${message}"></span>
+        </h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>LEARNING STYLE</th>
+                <th>INTELLIGENCE TYPE</th>
+                <th>RULE ID</th>
+                <th>RULE DATA</th>
+                <th>MARK</th>
+                <th>MARK</th>
+                <th>MARK</th>
+                <th>MARK</th>
+            </tr>
+            <tr th:each=" adaptiveRule : ${adaptiverules}">
+                <td th:inline="text">[[${adaptiveRule.id}]]</td>
+                <td th:text="${adaptiveRule.getIntelligenceDescription()}">2.41</td>
+                <td th:text="${adaptiveRule.getIntelligenceTypeId()}">yes</td>
+                <td th:text="${adaptiveRule.getRuleId()}">yes</td>
+                <td th:text="${adaptiveRule.ruleData}">yes</td>
+                <td th:text="${adaptiveRule.mark}">yes</td>
+                <td th:text="${adaptiveRule.intelligenceDescription}">yes</td>
+                <td th:text="${adaptiveRule.styleDescription}">yes</td>
+                <td th:text="${adaptiveRule.ruleDescription}">yes</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</div>
+<!-- /.container -->
+
+<script type="text/javascript"
+        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
